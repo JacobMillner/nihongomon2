@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitDefinition" load_steps=2 format=3 uid="uid://c4r5gvnx8p2la"]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_definition.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+unit_name = "Defender"
+unit_id = "defender_basic"
+description = "A tanky unit with high HP that can block 3 enemies."
+faction = 0
+max_hp = 300
+attack = 10
+defense = 15
+attack_interval = 1.5
+attack_range = 1
+block_count = 3
+is_ranged = false
+deploy_cost = 15
+deploy_type = 0
+redeploy_time = 70.0
+move_speed = 1.0
+can_fly = false
+is_unblockable = false
+color = Color(0.8, 0.8, 0.2, 1)

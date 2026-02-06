@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitDefinition" load_steps=2 format=3 uid="uid://dy3k5gm8nb4yx"]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_definition.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+unit_name = "Vanguard"
+unit_id = "vanguard_basic"
+description = "A cheap frontline unit that can block 2 enemies and generates DP."
+faction = 0
+max_hp = 150
+attack = 15
+defense = 5
+attack_interval = 1.2
+attack_range = 1
+block_count = 2
+is_ranged = false
+deploy_cost = 8
+deploy_type = 0
+redeploy_time = 50.0
+move_speed = 1.0
+can_fly = false
+is_unblockable = false
+color = Color(0.2, 0.6, 1.0, 1)

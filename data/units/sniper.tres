@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitDefinition" load_steps=2 format=3 uid="uid://btx7nm3pq9f6h"]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_definition.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+unit_name = "Sniper"
+unit_id = "sniper_basic"
+description = "A ranged unit that attacks enemies from a distance. Cannot block."
+faction = 0
+max_hp = 80
+attack = 25
+defense = 2
+attack_interval = 1.8
+attack_range = 3
+block_count = 0
+is_ranged = true
+deploy_cost = 12
+deploy_type = 0
+redeploy_time = 60.0
+move_speed = 1.0
+can_fly = false
+is_unblockable = false
+color = Color(0.2, 0.8, 0.4, 1)

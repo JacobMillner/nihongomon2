@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://r7w0lhtshu4e"]
+
+[ext_resource type="Script" uid="uid://b3eprsfmmhkia" path="res://entity/attack_range/attack_range.gd" id="1_uprdx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_p6vsw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uprdx"]
+transparency = 1
+albedo_color = Color(0.11372549, 0.76862746, 0.7058824, 0.3764706)
+
+[node name="AttackRange" type="Node3D" unique_id=1572779379]
+script = ExtResource("1_uprdx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1555227781]
+mesh = SubResource("SphereMesh_p6vsw")
+surface_material_override/0 = SubResource("StandardMaterial3D_uprdx")

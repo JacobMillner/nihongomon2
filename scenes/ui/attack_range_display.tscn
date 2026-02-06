@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3t7nm4pq2f8k"]
+
+[ext_resource type="Script" path="res://scripts/deployment/attack_range_display.gd" id="1_display"]
+
+[node name="AttackRangeDisplay" type="Node3D"]
+script = ExtResource("1_display")

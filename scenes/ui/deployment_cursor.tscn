@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cqr5tfvnb3lxp"]
+
+[ext_resource type="Script" uid="uid://dyvgfa16ktp22" path="res://scripts/deployment/deployment_cursor.gd" id="1_cursor"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.95, 0.1, 0.95)
+
+[node name="DeploymentCursor" type="Node3D" unique_id=1629302196]
+script = ExtResource("1_cursor")
+
+[node name="CursorMesh" type="MeshInstance3D" parent="." unique_id=2037379515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+material_override = SubResource("StandardMaterial3D_1")
+mesh = SubResource("BoxMesh_1")
+
+[node name="DirectionIndicator" type="Node3D" parent="." unique_id=114330657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Arrow" type="MeshInstance3D" parent="DirectionIndicator" unique_id=165755002]
+transform = Transform3D(0.2, 0, 0, 0, 0.05, 0, 0, 0, 0.3, 0, 0, -0.35)
+mesh = SubResource("BoxMesh_1")
