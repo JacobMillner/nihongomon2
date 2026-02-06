@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://c4uybicnybukp"]
 
-[ext_resource type="Script" uid="uid://c0a1hb441h14v" path="res://scripts/rich_text_align.gd" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://xhbwod45r8kr" path="res://scripts/ruby_rich_text_label.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c0a1hb441h14v" path="res://scripts/global/rich_text_align.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://xhbwod45r8kr" path="res://scripts/global/ruby_rich_text_label.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://c6npoj8grq8ki" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="MeshLibrary" uid="uid://brkrrvfbw2gqs" path="res://assets/mesh_lib/main_map.tres" id="4_jyhfs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("ProceduralSkyMaterial_jyhfs")
+
+[sub_resource type="Environment" id="Environment_tefeu"]
+background_mode = 2
+sky = SubResource("Sky_tbgi4")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="Theme" id="Theme_sugp2"]
 default_font_size = 30
@@ -12,6 +26,9 @@ script = ExtResource("1_0wfyh")
 
 [node name="Main" type="Node3D" unique_id=1236384590]
 script = ExtResource("1_sugp2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1769288465]
+environment = SubResource("Environment_tefeu")
 
 [node name="RubyRichTextLabel" type="RichTextLabel" parent="." unique_id=1816297733]
 offset_right = 709.0
@@ -32,3 +49,14 @@ ruby_text = "日本語の例
 metadata/_custom_type_script = "uid://xhbwod45r8kr"
 
 [node name="GridMap" type="GridMap" parent="." unique_id=2123097805]
+mesh_library = ExtResource("4_jyhfs")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65532, 65533, 2, 65532, 65534, 2, 65532, 65535, 2, 65532, 0, 2, 65532, 1, 2, 65532, 2, 2, 65532, 3, 2, 65533, 65533, 2, 65533, 65534, 2, 65533, 65535, 2, 65533, 0, 2, 65533, 1, 2, 65533, 2, 2, 65533, 3, 2, 65534, 65533, 2, 65534, 65534, 2, 65534, 65535, 2, 65534, 1, 2, 65534, 2, 2, 65534, 3, 2, 65535, 65533, 2, 65535, 65534, 2, 65535, 65535, 2, 65535, 1, 2, 65535, 2, 2, 65535, 3, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 1, 2, 1, 2, 2, 1, 3, 2, 2, 65533, 2, 2, 65534, 2, 2, 65535, 2, 2, 1, 2, 2, 2, 2, 2, 3, 2, 3, 65533, 2, 3, 65534, 2, 3, 65535, 2, 3, 0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 2, 0, 0, 65534, 0, 1, 65535, 0, 6, 0, 0, 6, 1, 0, 6)
+}
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=22257499]
+transform = Transform3D(1, 0, 0, 0, 0.90528727, 0.42479995, 0, -0.42479995, 0.90528727, 0, 6.1180277, 7.74137)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2112630776]
+transform = Transform3D(1, 0, 0, 0, 0.6846107, 0.7289089, 0, -0.7289089, 0.6846107, 0, 6.7798824, 0)
