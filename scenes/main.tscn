@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c4uybicnybukp"]
+
+[ext_resource type="Script" uid="uid://c0a1hb441h14v" path="res://scripts/rich_text_align.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://xhbwod45r8kr" path="res://scripts/ruby_rich_text_label.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c6npoj8grq8ki" path="res://scenes/main.gd" id="1_sugp2"]
+
+[sub_resource type="Theme" id="Theme_sugp2"]
+default_font_size = 30
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_jyhfs"]
+script = ExtResource("1_0wfyh")
+
+[node name="Main" type="Node3D" unique_id=1236384590]
+script = ExtResource("1_sugp2")
+
+[node name="RubyRichTextLabel" type="RichTextLabel" parent="." unique_id=1816297733]
+offset_right = 709.0
+offset_bottom = 597.0
+theme = SubResource("Theme_sugp2")
+bbcode_enabled = true
+text = "日本語の例
+私は[table=1,l,l,1][cell][valign px=-10][font_size=15]がくせい[/font_size][/valign][/cell][cell]学生[/cell][cell padding=5,0,0,0][/cell][/table]です。
+[table=1,l,l,1][cell][valign px=-10][font_size=15]かんじ[/font_size][/valign][/cell][cell]漢字[/cell][cell padding=5,0,0,0][/cell][/table]を[table=1,l,l,1][cell][valign px=-10][font_size=15]べんきょう[/font_size][/valign][/cell][cell]勉強[/cell][cell padding=5,0,0,0][/cell][/table]しています。
+今日は[table=1,l,l,1][cell][valign px=-10][font_size=15]てんき[/font_size][/valign][/cell][cell]天気[/cell][cell padding=5,0,0,0][/cell][/table]が良いです。"
+custom_effects = [SubResource("RichTextEffect_jyhfs"), SubResource("RichTextEffect_jyhfs")]
+script = ExtResource("1_o5qli")
+furigana_offset = -10
+ruby_text = "日本語の例
+私は[ruby base=\"学生\"]がくせい[/ruby]です。
+[ruby base=\"漢字\"]かんじ[/ruby]を[ruby base=\"勉強\"]べんきょう[/ruby]しています。
+今日は[ruby base=\"天気\"]てんき[/ruby]が良いです。"
+metadata/_custom_type_script = "uid://xhbwod45r8kr"
+
+[node name="GridMap" type="GridMap" parent="." unique_id=2123097805]
