@@ -41,3 +41,36 @@ Source spec: IMPLEMENTATION_PLAN.md :contentReference[oaicite:0]{index=0}
 - Rely only on the current workspace files explicitly read in this session and this `CLAUDE.md`.
 - If the toolchain attempts a memory step, **stop** and tell the user to disable memory in the runner config.
 
+
+# Local LLM Constraints (IMPORTANT)
+
+This project is being worked on with a local LLM that can stall on long, silent reasoning
+or when context grows too large. Optimize for reliability over elegance
+When performing long refactors or analysis, always emit progress updates
+or partial results at least every 1–2 minutes. Never remain silent
+for extended periods of time.
+
+Never read more than one file per step.
+After reading a file, summarize it in <500 tokens.
+Do not keep raw file contents in context.
+
+1) Anti-context-bloat rules (most important)
+
+Never paste full file contents into responses.
+
+Summarize each file immediately after reading (short bullets).
+
+Keep only:
+
+public API (signals, exported vars, function signatures)
+
+TODO list
+
+exact change plan
+
+Max 1 search per step.
+
+Prefer small diffs
+
+NEVER seek approval for plans or file edits.
+
